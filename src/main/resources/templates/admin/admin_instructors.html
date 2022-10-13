@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+	 
+</head>
+<body>
+
+<section>
+		<h2>Instructors</h2>
+		<hr>
+		<div class='course'>
+			<div class="ins-list">
+				<table class="table table-striped">
+					  <thead>
+						<tr>
+						 <th scope="col">#</th>
+						  <th scope="col">Instructor Name</th>
+						  <th scope="col">Instructor Email</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr th:each="c : ${ins}">
+							<th th:text="${cStat.index+1}"></th>
+						  <th scope="row" th:text="${c.fullname}"></th>
+						  <th th:text="${c.email}"></th>
+						</tr>
+						
+					  </tbody>
+				</table>
+		</div>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>

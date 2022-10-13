@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/base::layout(~{::section})">
+<head>
+	 
+</head>
+<body>
+
+<section>
+		<h2>Dashboard</h2>
+		<hr>
+		<div class='course'>
+			<br>
+			<h4>My Courses</h4>
+			<hr>
+			<div class="card-columns">
+				  <div class="card w-9" th:each="c : ${course}" >
+				    <div class="card-body">
+				      <h5 class="card-title" th:text="${c.courseCode}" ></h5>
+				     <a th:href="@{/teacher/view/course/{id}(id=${c.courseCode})}"><h5 class="card-heading" th:text="${c.courseName}" ></h5></a>
+				    </div>
+				    <div class="card-footer">
+				      <small>Course By : </small><span> <h5 class="card-text" th:text="${c.courseInstructor}"></h5></span>
+				      
+				    </div>
+				  </div>
+				  				  
+			</div>
+			<br>
+			<h4>Enrolled Courses</h4>
+			<hr>
+			<div class="card-columns">
+				<div class="card w-9" th:each="c : ${courseEnrolled}" >
+				  <div class="card-body">
+					<h5 class="card-title" th:text="${c.courseCode}" ></h5>
+				   <a th:href="@{/teacher/view/course/{id}(id=${c.courseCode})}"><h5 class="card-heading" th:text="${c.courseName}" ></h5></a>
+				  </div>
+				  <div class="card-footer">
+					<small>Course By : </small><span> <h5 class="card-text" th:text="${c.courseInstructor}"></h5></span>
+					
+				  </div>
+				</div>
+								  
+		  </div>
+	</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<div>
+		<strong class="heading"><span th:text="${quizTitle}"></span><span> Questions</span></strong>
+		<hr>
+		<div class="col-md-12 text-right">
+				<a th:href="@{/teacher/view/course/{id}/tab/quizes/{qid}/addQuestion(id = ${course.courseCode},qid=${quizId})}" class="btn btn-primary">Add Question</a>
+		</div>
+		<br>
+		<div class="card mb-9" th:each="q : ${question}">
+					  <div class="card-header">
+					  	<b th:text="${qStat.index+1}"></b>) : <span  th:text="${q.content}"></span>
+					  </div>
+					  <div class="card-body">
+					    	<div class="form-row">
+    								<div class="col-md-6">
+						      			<b>Option 1 : </b><span th:text="${q.option1}"></span>
+						    		</div>
+						    		<div class="col-md-6">
+						      			<b>Option 2 : </b><span th:text="${q.option2}"></span>
+						    		</div>
+						    </div>
+						    <div class="form-row">
+    								<div class="col-md-6">
+						      			<b>Option 3 : </b><span th:text="${q.option3}"></span>
+						    		</div>
+						    		<div class="col-md-6">
+						      			<b>Option 4 : </b><span th:text="${q.option4}"></span>
+						    		</div>
+						    </div>
+					  </div>
+					  <div class="card-footer">
+					      <b>Correct Answer : </b><small class="text-muted" th:text="${q.answer}"></small>
+					  </div>
+		</div>
+	</div>
+</section>
+
+
+</body>
+</html>

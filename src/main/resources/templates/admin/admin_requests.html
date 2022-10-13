@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+	 
+</head>
+<body>
+
+<section>
+		<h2>Requests</h2>
+		<hr>
+		<div>
+			<table class="table">
+				<thead>
+				  <tr class="table">
+					<th scope="col">#</th>
+					<th scope="col">Full Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">University Name</th>
+					<th scope="col">Address</th>
+					<th scope="col">Contact Number</th>
+					<th scope="col">Years Of Expirence</th>
+					<th scope="col">Designation</th>
+					<th scope="col">Requested Date</th>
+					<th scope="col">Account Verified</th>
+					<th scope="col">View</th>
+					<th scope="col">Delete User</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr th:each="p : ${appList}">
+					  <th th:text="${pStat.index+1}"></th>
+					<th scope="row" th:text="${p.fullName}">1</th>
+					<th scope="row" th:text="${p.email}">1</th>
+					<th scope="row" th:text="${p.universityName}">1</th>
+					<th scope="row" th:text="${p.address}">1</th>
+					<th scope="row" th:text="${p.contactNumber}">1</th>
+					<th scope="row" th:text="${p.yearsOfExpe}">1</th>
+					<th scope="row" th:text="${p.designation}">1</th>
+					<th scope="row" th:text="${p.requestedDate}">1</th>
+					<th scope="row" th:text="${p.verified}">1</th>
+					<th scope="row" ><a th:href="@{/admin/requests/accept/{id}(id = ${p.id})}" class="btn btn-success" role="button">Accept</a></th>
+				 
+					<th scope="row"><a th:href="@{/admin/requests/delete/{id}(id = ${p.id})}" class="btn btn-danger" role="button">Delete</a>
+				</th>
+				  </tr>
+				</tbody>
+			  </table>
+		</div>
+	</div>
+	
+</section>
+
+</body>
+</html>

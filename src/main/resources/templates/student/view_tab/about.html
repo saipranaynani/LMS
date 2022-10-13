@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="student/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<div>
+		<h1>About</h1>
+		<hr>
+		<div>
+			<table class="table table-striped">
+			  <tbody>
+			    <tr class="table-warning">
+			      <th>Course Code</th>
+			      <td th:text="${course.courseCode}"></td>
+			    </tr>
+			    <tr class="table-primary">
+			      <th>Course Name</th>
+			      <td th:text="${course.courseName}"></td>
+			    </tr>
+			    <tr class="table-success">
+			      <th>Course Instructor</th>
+			      <td th:text="${course.courseInstructor}"></td>
+			    </tr>
+			    <tr class="table-info">
+			      <th>Course Instructor Email</th>
+			      <td th:text="${course.courseInstructorEmail}"></td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+		
+		</div>
+		
+			
+	</div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+  <head>
+    
+  </head>
+  <body>
+    
+   
+<section>
+
+  <div>
+		<h1></h1>
+        <h4></h4>
+        <div >
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-lg-8 col-xl-8">
+                <div class="card rounded-3">
+                  <div class="card-body p-4 p-md-5">
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Application For Registering</h3>
+                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Thanks for choosing our website. Please fill the form and wait for the verification of your account to get started.</h5>
+
+            <form class="row g-3 needs-validation" method="post" action="saveApplication">
+                <div class="col-md-6">
+                  <label for="validationCustom01" class="form-label">Fullname</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="fullName" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom02" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="validationCustom02" name="email" required>
+                
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Contact Number</label>
+                    <input type="text" class="form-control" id="validationCustom03" name="contactNumber" required>
+  
+                  </div>
+                <div class="col-md-4">
+                  <label for="validationCustom04" class="form-label">University Name</label>
+                  <input type="text" class="form-control" id="validationCustom04" name="universityName" required>
+
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label">Designation</label>
+                  <input type="text" class="form-control" id="validationCustom05" name="designation" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationCustom06" class="form-label">Years Of Experience</label>
+                    <input type="text" class="form-control" id="validationCustom06" name="yearsOfExpe" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea2">Address</label>
+                  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" name="address" rows="5"></textarea>
+                </div>
+                
+                <div class="col-12">
+                  <button class="btn btn-info" type="submit">Submit form</button>
+                </div>
+              </form>
+            </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
+   
+   
+  </body>
+</html>

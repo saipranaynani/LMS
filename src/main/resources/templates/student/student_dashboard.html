@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="student/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+		<h2>Dashboard</h2>
+		<hr>
+		<div class='course'>
+			<br>
+			<div class="card-columns">
+				  <div class="card mb-3" th:each="c : ${courseEnrolled}" >
+				    <div class="card-body">
+				      <h5 class="card-title" th:text="${c.courseCode}" ></h5>
+				     <a th:href="@{/student/view/course/{id}(id=${c.courseCode})}"><h5 class="card-heading" th:text="${c.courseName}" ></h5></a>
+				    </div>
+				    <div class="card-footer">
+				      <small>Course By : </small><span> <h5 class="card-text" th:text="${c.courseInstructor}"></h5></span>
+				      
+				    </div>
+				  </div>
+				  				  
+			</div>
+	</div>
+</section>
+
+</body>
+</html>

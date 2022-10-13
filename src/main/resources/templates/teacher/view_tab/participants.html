@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<div>
+		<h1>Participants</h1>
+		<div class="col-md-12 text-right">
+			<a th:href="@{/teacher/view/course/{id}/tab/participants/addingParticipant(id = ${course.courseCode})}" class="btn btn-primary">Add Participant</a>
+		</div>
+		<h1 th:text="'Participants '+${course.numberOfParticipants}"></h1>
+		<table class="table table-striped">
+		  <thead>
+		    <tr class="table-info">
+		      <th scope="col">#</th>
+		      <th scope="col">Full Name</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">Date Joined</th>
+			  <th scope="col">Role</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="p : ${participantslist}">
+		    	<th th:text="${pStat.index+1}"></th>
+		      <th scope="row" th:text="${p.studentName}">1</th>
+		      <th scope="row" th:text="${p.stduentEmail}">1</th>
+		      <th scope="row" th:text="${p.joined}">1</th>
+			  <th scope="row" th:text="${p.role}">1</th>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</section>
+
+</body>
+</html>

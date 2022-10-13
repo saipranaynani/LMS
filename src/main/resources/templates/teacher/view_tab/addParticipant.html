@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<h2>Add Participant</h2>
+		<hr>
+		<div class="course-section">
+		
+			<form class="needs-validation" th:action="@{{id}/participantSave/user/{userId}(id=${course.id},userId=${user.id})}" method="post">
+				  <div class="form-row">
+				    <div class="col-md-4 mb-3">
+				      <label for="validationCustom01">Full Name</label>
+				      <input type="text" class="form-control " id="validationCustom01" placeholder="Full Name" name="fullname" required>
+				       
+				    </div>
+				  </div>
+				   <div class="form-row">
+				    <div class="col-md-3 mb-3">
+				      <label for="validationCustom03">Email</label>
+				      <input type="text" class="form-control" id="validationCustom03" placeholder="Email" name="email" required>
+				      
+				    </div>
+				    
+				    <div class="col-md-3 mb-3">
+				      <label for="validationCustom05">Password</label>
+				      <input type="password" class="form-control" id="validationCustom05" placeholder="Password" name="password" required>
+				    </div>
+				  </div>
+				  
+				  </div>
+				  <div class="form-row">
+					 
+					<div class="form-outline mb-4">
+						<h6>Role</h6>
+						<div class="form-check form-check-inline">
+						   <input class="form-check-input" type="radio" name="role" id="inlineRadio1" value="student">
+						   <label class="form-check-label" for="inlineRadio1">Student</label>
+						 </div>
+						 <div class="form-check form-check-inline">
+						   <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="teacher">
+						   <label class="form-check-label" for="inlineRadio2">Teacher</label>
+						 </div>
+						
+					   </div>
+				  </div>
+				  <button class="btn btn-primary" type="submit">Add Participant</button>
+			</form>
+			
+		</div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+		<h2>My Courses</h2>
+		<hr>
+		<div class="course-section">
+		
+			<div class="col-md-12 text-right">
+				<a th:href="@{/teacher/createCourse}" class="btn btn-primary">Create Course</a>
+			</div>
+			<br>
+			<div class="course-list">
+					<table class="table table-bordered">
+						  <thead>
+						    <tr>
+						     <th scope="col">#</th>
+						      <th scope="col">Course Code</th>
+						      <th scope="col">Course Name</th>
+						      <th scope="col">Number Of Students Enrolled</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr th:each="c : ${course}">
+						    	<th th:text="${cStat.index+1}"></th>
+						      <th scope="row" th:text="${c.courseCode}"></th>
+						      <th th:text="${c.courseName}"></th>
+						      <th th:text="${c.numberOfParticipants}"></th>
+						    </tr>
+						    
+						  </tbody>
+					</table>
+			</div>
+		</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<div>
+		<h1>Grades</h1>
+		<table class="table table-striped">
+		  <thead>
+		    <tr class="table-info">
+		      <th scope="col">#</th>
+		      <th scope="col">Quiz Title</th>
+		      <th scope="col">Attempted By</th>
+		      <th scope="col">Number Of Questions</th>
+		      <th scope="col">Total Correct</th>
+		      <th scope="col">Max Score</th>
+		      <th scope="col">Score Earned</th>
+		      <th scope="col">Attempted On</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="r : ${result}">
+		      <th th:text="${rStat.index+1}"></th>
+		      <td  th:text="${r.quizTitle}">1</td>
+		      <td  th:text="${r.username}">1</td>
+		      <td th:text="${r.numberOfQuestions}">1</td>
+		      <td th:text="${r.totalCorrect}">1</td>
+		      <td th:text="${r.maxScore}">1</td>
+		      <td th:text="${r.score}">1</td>
+		      <td th:text="${r.attemptedDate}">1</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</section>
+
+
+</body>
+</html>

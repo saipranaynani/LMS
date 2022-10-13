@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<div>
+		<h1>Quizes</h1>
+		<div class="col-md-12 text-right">
+				<a th:href="@{/teacher/view/course/{id}/tab/quizes/createQuiz(id = ${course.courseCode})}" class="btn btn-primary">Create Quiz</a>
+		</div>
+		<br>
+				<div class="card mb-9" th:each="q : ${quiz}">
+					  <div class="card-header">
+					  	<span  th:text="${q.title}"></span>
+					  </div>
+					  <div class="card-body">
+					    	 Maximum Marks : <span th:text="${q.maxMarks}"></span>
+					    	 Number Of Questions : <span th:text="${q.numberOfQuestions}"></span>
+					    	 <div class="col-md-12 text-right">
+					    	 <a class="btn btn-primary" th:href="@{/teacher/view/course/{id}/tab/quizes/{qid}/updateQuiz(id=${course.courseCode},qid=${q.qid})}" role="button">Update Quiz</a>
+					    	 	<a class="btn btn-primary" th:href="@{/teacher/view/course/{id}/tab/quizes/{qid}/allQuestions(id=${course.courseCode},qid=${q.qid})}" role="button">View Questions</a>
+					    	 </div>
+					  </div>
+				</div>
+	</div>
+</section>
+
+
+</body>
+</html>

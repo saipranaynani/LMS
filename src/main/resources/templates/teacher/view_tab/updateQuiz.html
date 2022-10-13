@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<h2>Update Quiz</h2>
+		<hr>
+		<div class="course-section">
+		
+			<form class="needs-validation" action="updateSaveQuiz" method="post">
+				  <div class="form-row">
+				    <div class="col-md-4 mb-3">
+				      <label for="validationCustom01">Quiz Name</label>
+				      <input type="text" class="form-control " id="validationCustom01" placeholder="Quiz Name" name="title" th:value="${quiz.title}" required>
+				       
+				    </div>
+				  </div>
+				   <div class="form-row">
+				    <div class="col-md-3 mb-3">
+				      <label for="validationCustom03">Number Of Questions</label>
+				      <input type="text" class="form-control" id="validationCustom03" placeholder="Number Of Questions" name="numberOfQuestions" th:value="${quiz.numberOfQuestions}" required>
+				      
+				    </div>
+				    <div class="col-md-3 mb-3">
+				      <label for="validationCustom04">Maximum Marks</label>
+				      <input type="text" class="form-control" id="validationCustom04" placeholder="Maximum Marks" name="maxMarks" th:value="${quiz.maxMarks}" required>
+				    </div>
+				    
+				    <div class="col-md-3 mb-3">
+				      <label for="validationCustom05">Quiz For Course</label>
+				      <input type="text" class="form-control" id="validationCustom05" name="courseCode" th:value="${quiz.courseCode}" required>
+				    </div>
+				  </div>
+				  
+				  </div>
+				  <div class="form-row">
+				  <div class="col-md-3 mb-3">
+				  		<label>Quiz Status</label>
+				    	<div class="form-check">
+						  <input class="form-check-input" type="radio" name="active" id="exampleRadios1" value="true">
+						  <label class="form-check-label" for="exampleRadios1">
+						    Enable
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="active" id="exampleRadios2" value="false">
+						  <label class="form-check-label" for="exampleRadios2">
+						    Disable
+						  </label>
+						</div>
+				  </div>
+				  </div>
+				  <button class="btn btn-primary" type="submit">Update Quiz</button>
+			</form>
+			
+		</div>
+</section>
+
+
+</body>
+</html>

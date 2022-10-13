@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="student/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+		<h1>Course Enrollemnt</h1>
+		<br>
+		<div class="card">
+		  <div class="card-header">
+		    <h1 th:text="${course.courseName}"></h1>
+		  </div>
+		  <div class="card-body">
+		    <h6 class="card-title" th:text="'Course Code : '+${course.courseCode}"></h6>
+		    <h6 class="card-text" th:text="'Course Instructor : '+${course.courseInstructor}"></h6>
+		    <h6 class="card-text" th:text="'Course Instructor Email : '+${course.courseInstructorEmail}"></h6>
+		  </div>
+		  <div class="card-footer text-muted">
+		    <form th:action="@{enroll/{courseId}/user/{userId}(courseId=${course.id},userId=${user.id})}" method='post'>
+				        	<div class="form-group">
+							    <label for="Input1">Course Access Code</label>
+							    <input type="text" class="form-control" id="Input1" placeholder="Enter Course Access Code" name="accessCodeUsed" required>
+							  </div>
+							  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		  </div>
+		</div>
+</section>
+
+</body>
+</html>

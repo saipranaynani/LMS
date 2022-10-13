@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="teacher/view_tab/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+	<div>
+		<strong class="heading"><span th:text="${quizTitle}"></span><span> Questions Adding</span></strong>
+		<br>
+		<br>
+		<form action='saveQuestion' method="post">
+			  <div class="form-row">
+			   <div class="col-md-12">
+			      <label for="validationDefault03">Question</label>
+			      <input type="text" class="form-control" id="validationDefault03" placeholder="Question Content" name="content" required>
+			    </div>
+			  </div>
+			  <br>
+			  <div class="form-row">
+			    <div class="col-md-6">
+			      <label for="validationDefault04">Option 1 </label>
+			      <input type="text" class="form-control" id="validationDefault04" placeholder="Option 1" name="option1" required>
+			    </div>
+			    <div class="col-md-6">
+			      <label for="validationDefault05">Option 2</label>
+			      <input type="text" class="form-control" id="validationDefault05" placeholder="Option 2" name="option2" required>
+			    </div>
+			  </div>
+			  <br>
+			  <div class="form-row">
+			    <div class="col-md-6">
+			      <label for="validationDefault06">Option 3 </label>
+			      <input type="text" class="form-control" id="validationDefault06" placeholder="Option 3" name="option3" required>
+			    </div>
+			    <div class="col-md-6">
+			      <label for="validationDefault07">Option 4</label>
+			      <input type="text" class="form-control" id="validationDefault07" placeholder="Option 4" name="option4" required>
+			    </div>
+			  </div>
+			  <br>
+			  <div class="form-row">
+			   <div class="col-md-6">
+			      <label for="validationDefault03">Answer</label>
+			      <input type="text" class="form-control" id="validationDefault03" placeholder="Answer" name="answer" required>
+			    </div>
+			    <div class="col-md-6">
+			      <label for="validationDefault03">Question For Quiz with ID</label>
+			      <input type="text" class="form-control" id="validationDefault03" placeholder="quiz id" name="quizId" th:value="${quizId}" required>
+			    </div>
+			  </div>
+			  <br>
+			  <br>
+			  <button class="btn btn-primary" type="submit">Add Question</button>
+			</form>
+			
+	</div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="student/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+		<h2>All Courses</h2>
+		<hr>
+		<div class='course'>
+			<br>
+				  <table class="table table-striped">
+					<thead>
+					  <tr class="table">
+						<th scope="col">#</th>
+						<th scope="col">Course</th>
+						<th scope="col">Date Joined</th>
+						<th scope="col">Role</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  	<tr th:each="p : ${course}">
+						<th th:text="${pStat.index+1}"></th>
+						<td><a th:href="@{/student/view/course/{id}(id=${p.courseCode})}"><b class="card-heading" th:text="${p.courseName}"></b> [<b th:text="${p.courseCode}"></b>]</a></td>
+						<th th:text="${p.joined}"></th>
+						<th th:text="${p.role}"></th>
+					</tr>
+					</tbody>
+				  </table>
+</section>
+
+</body>
+</html>
